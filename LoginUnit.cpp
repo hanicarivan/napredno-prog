@@ -54,7 +54,7 @@ void __fastcall TFLogin::OpenMainForm(TObject *Sender)
 	VAR[1] = Variant(EPasswordLogin->Text);
 	if(DMUsers->TUsers->Locate("username;password",VarArrayOf(VAR,1),Opts)) {
 
-		 Hide();
+		 //Hide();
 		 FMain->ActiveUser->Caption =  FLogin->EUsernameLogin->Text;
 		 FMain->ShowModal();
 	} else {
