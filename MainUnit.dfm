@@ -2,8 +2,8 @@ object FMain: TFMain
   Left = 0
   Top = 0
   Caption = 'FMain'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 441
+  ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,8 +14,8 @@ object FMain: TFMain
   object ActiveUser: TStaticText
     Left = 530
     Top = 8
-    Width = 90
-    Height = 25
+    Width = 4
+    Height = 4
     TabOrder = 0
   end
   object BtnLogut: TButton

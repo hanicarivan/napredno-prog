@@ -21,5 +21,11 @@ void __fastcall TFMain::LogOut(TObject *Sender)
 	FMain->Close();
 	FLogin->Show();
 	// isprazniti login nakon zatvaranja Logina...
+
+    //provjera checkboxa remember me radi ispraznjivanja login forme
+	if(!(FLogin->CBRememberMe->Checked)){
+		FLogin->EUsernameLogin->Text = "";
+		FLogin->EPasswordLogin->Text = "";
+	}
 }
 //---------------------------------------------------------------------------

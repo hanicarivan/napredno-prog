@@ -25,13 +25,13 @@ void __fastcall TFRegister::RegisterUser(TObject *Sender)
 
 	if(DMUsers->TUsers->Locate("username",EUsernameInput->Text,Opts)== true) {
 
-		Application->MessageBox(L"Username već postoji",L"Greška",MB_OK|MB_ICONWARNING);
+		Application->MessageBox(L"Username already taken!",L"Error!",MB_OK|MB_ICONWARNING);
 	} else {
 		DMUsers->TUsers->Append();
 		DMUsers->TUsers->FieldByName("username")->AsString = EUsernameInput->Text;
 		DMUsers->TUsers->FieldByName("password")->AsString = EPasswordInput->Text;
 		DMUsers->TUsers->Post();
-		Application->MessageBox(L"Račun je uspješno kreiran!",L"Uspjeh!",MB_OK|MB_ICONINFORMATION);
+		Application->MessageBox(L"Account created successfully!",L"Success!",MB_OK|MB_ICONINFORMATION);
 		FRegister->Close();
 		FLogin->EUsernameLogin->Text =  EUsernameInput->Text;
 	}
