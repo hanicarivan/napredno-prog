@@ -2,8 +2,8 @@ object FLogin: TFLogin
   Left = 0
   Top = 0
   Caption = 'Login'
-  ClientHeight = 296
-  ClientWidth = 436
+  ClientHeight = 292
+  ClientWidth = 420
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

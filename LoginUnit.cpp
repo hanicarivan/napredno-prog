@@ -2,6 +2,8 @@
 
 #include <vcl.h>
 #include <Registry.hpp>
+#include <System.Hash.hpp>
+#include <System.Math.hpp>
 #pragma hdrstop
 
 #include "LoginUnit.h"
@@ -40,30 +42,50 @@ void __fastcall TFLogin::OpenRegisterForm(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+char getRandomChar(){
+	return char(RandomRange(97, 123));
+}
+//---------------------------------------------------------------------------
+
+//funkcija koja provjerava postoji li password u bazi
+bool ifPasswordExists(UnicodeString Username, UnicodeString Password){
+	TLocateOptions Opts;
+	Opts.Clear();
+	for(int i = 97; i < 123; i++){
+		if(DMUsers->TUsers->Locate("password", THashSHA2::GetHashString(THashMD5::GetHashString(Username) + Password + char(i), THashSHA2::TSHA2Version::SHA256), Opts)){
+			return true;
+		}
+	}
+	return false;
+}
+//---------------------------------------------------------------------------
 
 void __fastcall TFLogin::OpenMainForm(TObject *Sender)
 {
 
 	// provjera username-a i lozinke
-	// sakriti unos passworda
-	//
 	TLocateOptions Opts;
 	Opts.Clear();
 	Variant VAR[2];
 	VAR[0] = Variant(EUsernameLogin->Text);
-	VAR[1] = Variant(EPasswordLogin->Text);
-	if(DMUsers->TUsers->Locate("username;password",VarArrayOf(VAR,1),Opts)) {
+	if(ifPasswordExists(EUsernameLogin->Text, EPasswordLogin->Text)){
+		for(int i = 97; i < 123; i++){
+			if(DMUsers->TUsers->Locate("password", THashSHA2::GetHashString(THashMD5::GetHashString(EUsernameLogin->Text) + EPasswordLogin->Text + char(i), THashSHA2::TSHA2Version::SHA256), Opts)){
+				VAR[1] = Variant(THashSHA2::GetHashString(THashMD5::GetHashString(EUsernameLogin->Text) + EPasswordLogin->Text + char(i), THashSHA2::TSHA2Version::SHA256));
+				break;
+			}
+		}
+	}
 
-		 Hide();
-		 FMain->ActiveUser->Caption =  FLogin->EUsernameLogin->Text;
-		 FMain->ShowModal();
+	if(DMUsers->TUsers->Locate("username;password",VarArrayOf(VAR,1),Opts)){
+		Hide();
+		FMain->ActiveUser->Caption =  FLogin->EUsernameLogin->Text;
+		FMain->ShowModal();
 	} else {
 		Application->MessageBox(L"Wrong Username or Password!",L"Error!",MB_OK|MB_ICONWARNING);
 	}
 }
-
 //---------------------------------------------------------------------------
-
 
 void __fastcall TFLogin::RememberMe(TObject *Sender, TCloseAction &Action)
 {

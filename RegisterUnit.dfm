@@ -2,8 +2,8 @@ object FRegister: TFRegister
   Left = 0
   Top = 0
   Caption = 'Register'
-  ClientHeight = 432
-  ClientWidth = 618
+  ClientHeight = 429
+  ClientWidth = 606
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
