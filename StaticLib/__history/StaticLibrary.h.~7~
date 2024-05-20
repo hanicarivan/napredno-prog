@@ -1,0 +1,18 @@
+//---------------------------------------------------------------------------
+#include <vcl.h>
+#ifndef StaticLibraryH
+#define StaticLibraryH
+//---------------------------------------------------------------------------
+#endif
+
+char getRandomChar();
+UnicodeString getLanguage();
+class PasswordHashing {
+public:
+    UnicodeString Username;
+    UnicodeString Password;
+
+	PasswordHashing(UnicodeString U, UnicodeString P);
+	UnicodeString HashLoginPassword(int i);
+    UnicodeString HashRegisterPassword(char i);
+};

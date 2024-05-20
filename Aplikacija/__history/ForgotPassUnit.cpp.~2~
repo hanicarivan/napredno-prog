@@ -1,0 +1,28 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "ForgotPassUnit.h"
+#include "LoginUnit.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFForgot *FForgot;
+//---------------------------------------------------------------------------
+__fastcall TFForgot::TFForgot(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TFForgot::BtnCloseClick(TObject *Sender)
+{
+	FForgot->Hide();
+	FForgot->Close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TFForgot::FormClose(TObject *Sender, TCloseAction &Action)
+{
+	FLogin->ShowModal();
+}
+//---------------------------------------------------------------------------

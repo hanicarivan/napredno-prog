@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/05/16 15:35:00.000.728,=W:\NaprednoProgProjekt\Unit1.cpp</Transaction>
+    <Transaction>2024/05/16 15:35:23.000.029,W:\NaprednoProgProjekt\Unit1.cpp=D:\prog\cppbuilder\save\StaticLib\Unit1.cpp</Transaction>
+    <Transaction>2024/05/16 15:35:23.000.029,W:\NaprednoProgProjekt\Unit1.h=D:\prog\cppbuilder\save\StaticLib\Unit1.h</Transaction>
+    <Transaction>2024/05/16 15:35:23.000.031,W:\NaprednoProgProjekt\Project1.cbproj=D:\prog\cppbuilder\save\StaticLib\StaticLibrary.cbproj</Transaction>
+    <Transaction>2024/05/16 15:35:26.000.856,D:\prog\cppbuilder\save\StaticLib\Unit1.h=D:\prog\cppbuilder\save\StaticLib\StaticLibrary.h</Transaction>
+    <Transaction>2024/05/16 15:35:26.000.856,D:\prog\cppbuilder\save\StaticLib\Unit1.cpp=D:\prog\cppbuilder\save\StaticLib\StaticLibrary.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

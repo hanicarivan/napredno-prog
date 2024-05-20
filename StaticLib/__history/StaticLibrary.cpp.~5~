@@ -1,0 +1,19 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "StaticLibrary.h"
+#include <System.math.hpp>
+#include <Registry.hpp>
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+char getRandomChar(){
+	return char(RandomRange(97, 123));
+}
+UnicodeString getLanguage(){
+	TIniFile* ini;
+		ini = new TIniFile(GetCurrentDir() + "\\STARTUP.INI");
+		UnicodeString language = ini->ReadString("Settings","Language","English");
+	delete ini;
+	return language;
+}

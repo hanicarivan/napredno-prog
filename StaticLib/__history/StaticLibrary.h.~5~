@@ -1,0 +1,9 @@
+//---------------------------------------------------------------------------
+#include <vcl.h>
+#ifndef StaticLibraryH
+#define StaticLibraryH
+//---------------------------------------------------------------------------
+#endif
+
+char getRandomChar();
+UnicodeString getLanguage();

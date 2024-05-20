@@ -1,0 +1,14 @@
+//---------------------------------------------------------------------------
+
+#ifndef StaticLibH
+#define StaticLibH
+//---------------------------------------------------------------------------
+#endif
+#include <vcl.h>
+#include <map>
+#include <System.Math.hpp>
+#include <Registry.hpp>
+std::map<String, std::map<String, String>> translation;
+void translateForm(TForm* Form, String Language, const std::map<String, std::map<String, String>>& translation);
+char getRandomChar();
+UnicodeString getLanguage();
